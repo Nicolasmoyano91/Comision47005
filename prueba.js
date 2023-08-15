@@ -54,3 +54,14 @@ while (entrada != "ESC") {
     
     //Mostrar resultado
     console.log("Usted debe pagar " + cuotas + " cuotas de " + division)
+
+
+    const productos = [
+        { id: 1, nombre: "camisa", precio: 1000 },
+        { id: 2, nombre: "zapato", precio: 700 },
+        { id: 3, nombre: "gorra", precio: 350 },
+        { id: 4, nombre: "media", precio: 100 },
+    ];
+
+    let precio = parseInt(prompt("Ingrese el precio minimo"));
+    let filtrados = productos.filter((item) => item.precio > precio);

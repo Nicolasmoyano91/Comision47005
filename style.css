@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-wraper{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 3px 3px 5px grey;
+}
+nav .logo{
+    font-weight: 700;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav #toggle, nav label{
+    display: none;
+}

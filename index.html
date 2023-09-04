@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Proyecto JavaScript </title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <header class="nav-wraper">
-        <nav>
-            <a class="logo" href="">logo</a>
-            <label for="toggle"><i class="material-icons">menu</i></label>
-            <input type="checkbox" id="toggle">
-            <div class="menu">
-                <ul>
-                    <li><a href="">Vehiculos</a></li>
-                    <li><a href="">Usados</a></li>
-                    <li><a href="">Oferta</a></li>
-                    <li><a href="">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-<script src="main.js"></script>
-</body>
-</html
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Tienda</h1>
+
+			<div class="container-icon">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="icon-cart" id="iconcart"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+					/>
+				</svg>
+				
+			</div>
+		</header>
+        <div id = "containeritems" class="container-items">
+		</div>
+		<div id= "modalcontainer" class="modal-container" >
+
+		</div>
+		</div>
+		
+		<script src="products.js"></script>
+        <script src="main.js"></script>
+	</body>
+</html>

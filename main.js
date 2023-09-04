@@ -1,78 +1,106 @@
-let marca="", modelo="", descuento=0;
+const containeritems = document.getElementById(id = "containeritems");
+const iconcart = document.getElementById(id="iconcart");
+const modalcontainer= document.getElementById(id="modalcontainer");
 
-marca = prompt("Marca?");
-modelo = prompt("Modelo?");
+let carrito = [];
 
-if (marca === "chevrolet")
-    if (modelo === "onix")
-    {
-        descuento=5;
-    }
-    else {
-        descuento= 10;
-    }
-    alert (`Su descuento es ${descuento}`);
+const productos = [
+    { id: 1, nombre: "Chevrolet Onix", precio: 5270000, img:"./assets/onix.jpg",cantidad:1},
+    { id: 2, nombre: "Chevrolet Prisma", precio: 5400000,img:"./assets/prisma.jpg",cantidad:1},
+    { id: 3, nombre: "Chevrolet Cruze", precio: 7690000,img:"./assets/cruze.jpg", cantidad:1},
+    { id: 4, nombre: "Ford Fiesta", precio: 5770000,img:"./assets/fiesta.jpg",cantidad:1},
+    { id: 5, nombre: "Ford Mondeo", precio: 12350000,img:"./assets/mondeo.jpg", cantidad:1},
+    { id: 6, nombre: "Ford Ranger", precio: 15530000, img:"./assets/ranger.jpg", cantidad:1},
+];
 
-    function cantidad1(){
-    let cantidad1 = prompt("ingresar cantidad a prestar");
-    alert("La cantidad es = " + cantidad1)
-    return cantidad1;
-    }
-    
-    function cuotas1(){
-    let cuotas1 =prompt("En cuantas cuotas quiere pagar, elija de 1 a 12");
-    alert("Desea el prestamo en " + cuotas1 + " cuotas?")
-    return cuotas1
-    }
-    
-    let cantidad = cantidad1();
-    let cuotas = cuotas1();
-    
-    console.log("La cantidad es: " + cantidad);
-    console.log("Las cuotas son:" + cuotas);
-    
-    function dividir(dato1, dato2){
-    let resultado = dato1 / dato2;
-    return resultado;
-    }
-    
-    //Capturar cantiddad / cuotas
-    let division = dividir(cantidad, cuotas);
-    
-    //Mostrar resultado
-    console.log("Usted debe pagar " + cuotas + " cuotas de " + division);
+productos.forEach((item) => { 
+    let div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+    <img class "img" src="${item.img}"/> 
+    <p class"info-product" >${item.nombre}</p>
+    <b class "price">${item.precio} $</b>
+`;
+containeritems.append (div);
 
-    const productos = [
-        { id: 1, nombre: "Chevrolet Onix", precio: 5270000 },
-        { id: 2, nombre: "Chevrolet Prisma", precio: 5400000 },
-        { id: 3, nombre: "Chevrolet Cruze", precio: 7690000 },
-        { id: 4, nombre: "Ford Fiesta", precio: 5770000 },
-        { id: 5, nombre: "Ford Mondeo", precio: 12350000 },
-        { id: 6, nombre: "Ford Ranger", precio: 15530000 },
-    ];
-    
-    const precio = parseInt(prompt("Ingrese el precio minimo para su compra"));    
-    const result = productos.filter((productos) => productos.precio > precio);
-    const ListadoFiltro = result.reduce((acc,el)=> acc += `${el.nombre} - ${el.precio} \n`, "")
-    alert(ListadoFiltro);
+let agregar = document.createElement ("button");
+agregar.innerText= "Agregar";
+agregar.classname= "button";
 
-    let nombre = prompt("Ingrese el nombre del producto a consultar");
-    let producto;
+div.append(agregar);
 
-    for (const item of productos) {
-        if (item.nombre === nombre) {
-            producto = item;
-        }
-    } 
-    if (producto) {
-        let mensaje = `
-        ID: ${producto.id}
-        Nombre: ${producto.nombre}
-        $${producto.precio}
-        `;
-    alert(mensaje);
-} else {
-        alert("El producto no se ha encontrado en la lista");
-    }
+agregar.addEventListener("click", () => {
+    const repeat = carrito.some((repeatProduct)=> repeatProduct.id === item.id);
+    if(repeat) {
+        carrito.map((prod)=>{
+            if(prod.id === productos.id){
+            prod.cantidad++;
+                }
+        });
+        } else {
+            carrito.push({
+                id:item.id,
+                img:item.img,
+                nombre: item.nombre,
+                precio: item.precio,
+                cantidad: item.cantidad,
+            });
+            console.log(carrito);
+            savelocal();
+            }
+        });
+    });   
+    const vercarrito =()=>{
+    modalcontainer.innerHTML= "";  
+    modalcontainer.style.display= "flex";
+    const modalHeader =document.createElement("div");
+    modalHeader.className= "modal-header";
+    modalHeader.innerHTML= `
+    <h1 class"modal-header-title">Carrito.</h1>
+    `;
+    modalcontainer.append(modalHeader);
 
+    const modalbutton = document.createElement("h1");
+    modalbutton.innerText ="x";
+    modalbutton.className="modal-header-boton";
 
+    modalbutton.addEventListener("click", () => {
+        modalcontainer.style.display ="none";
+    });
+
+    modalHeader.append(modalbutton);
+
+carrito.forEach((item) => {
+        let carritoContent= document.createElement("div")
+        carrito.className="modal-content";
+        carritoContent.innerHTML = `
+        <img src="${item.img}">
+        <h3>${item.nombre}</h3>
+        <p> ${item.precio} $</p>
+        <p> ${item.cantidad}</p>
+    `;
+    modalcontainer.append("carritoContent")
+
+    let eliminar =document.createElement("span");
+    eliminar.innerText="X";
+    eliminar.className="Delete";
+    carritoContent.append(eliminar);
+    });
+
+const total = carrito.reduce((acc,el) => acc + el.precio,0);
+
+const totalComprado = document.createElement("div");
+totalComprado.className ="totalcomprado";
+totalComprado.innerHTML = `total a pagar: ${total}$`
+;
+modalcontainer.append(totalComprado);
+};
+
+iconcart.addEventListener("click",vercarrito );
+
+const eliminarProducto= ()=>{
+}
+
+const savelocal = ()=>{
+localStorage.setItem("carrito",JSON.stringify (carrito));
+};

@@ -65,3 +65,27 @@ while (entrada != "ESC") {
 
     let precio = parseInt(prompt("Ingrese el precio minimo"));
     let filtrados = productos.filter((item) => item.precio > precio);
+
+    let agregar = document.createElement ("button");
+agregar.innerText= "Agregar";
+agregar.classname= "boton";
+
+div.append(agregar);
+
+const modalcontainer= document.getElementById(id="modal-container");
+
+iconcart.addEventListener("click", () => {
+    const modalHeader =document.createElement("div");
+    modalHeader.className= "modal-header"
+    modalHeader.innerHTML= `
+    <h1 class"modalheadertitle">Carrito</h1>
+    `;
+    modalContainer.append(modalHeader);
+
+    const modalbutton = document.createElement("h1");
+    modalbutton.innerText ="x";
+    modalbutton.className="modal-header-boton";
+
+    modalHeader.append(modalbutton);
+});
+

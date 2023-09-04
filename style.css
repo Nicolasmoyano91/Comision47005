@@ -1,37 +1,245 @@
+/* Globales */
+*::after,
+*::before,
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.nav-wraper{
-    width: 100%;
+
+body{
     margin: 0 auto;
-    padding: 1rem;
+    max-width: 1200px;
+    font-family: 'Lato';
+    color: #333;
 }
-nav{
+
+.icon-cart{
+    width: 40px;
+    height: 40px;
+    stroke: #000;
+}
+
+.icon-cart:hover{
+    cursor: pointer;
+}
+
+img{
+    max-width: 100%;
+}
+
+header{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    background-color: grey;
-    padding: 1rem 1.5rem;
-    border-radius: 0.4rem;
-    box-shadow: 3px 3px 5px grey;
+    padding: 30px 0 40px 0;
 }
-nav .logo{
+
+.container-icon{
+    position: relative;
+}
+
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 0;
+
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#contador-productos{
+    font-size: 12px;
+}
+
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    background-color: #fff;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-producto-carrito{
+    font-size: 20px;
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+
+.icon-close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.cart-total h3{
+    font-size: 20px;
     font-weight: 700;
 }
 
-nav ul{
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-nav a {
-    text-decoration: none;
-    color: white;
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
 }
 
-nav #toggle, nav label{
+.hidden-cart{
     display: none;
 }
+
+
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card{
+    border-radius: 10px;
+}
+
+.card:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.card figure{
+    overflow: hidden;
+}
+
+.card:hover img{
+    transform: scale(1.2);
+}
+
+.card info-product{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.card info-product button{
+    border: none;
+    background: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.modal-container {
+    Widht: 80px;
+    Margin: 0 10%;
+    Max-height: 88vh;
+    Color: #fff;
+    Background-color: #121212;
+    Display:flex;
+    Flex-direction: column;
+    Align-items: center;
+    Position: fixed;
+    Overflow:auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color:none;
+    }
+    .modal-container::webkit-scrollbar{
+    display:none;
+    }
+    
+    .modalheader{
+    Display:flex;
+    Justify-content: space-around;
+    Background-color: #0a0909;
+    Color: #fff;
+    Widht:100 px;
+    }
+    .modal-header-title{
+    Justifiy-self: start;}
+    
+    .modal-header-button {
+    Cursor: pointer;
+    }
+    
+    
+    .modal-container > .modal-content {
+    Display:flex;
+    Flex-direction: row;
+    Justify-content: space-around;
+    Align-items: center;
+    Width: 70%;
+    Margin: 10px;
+    }
+    
+    
+    .modal-container > div > img {
+    Height: 120px;
+    Width:120px;
+    }
+    
+    .totalcomprado{
+    Font-size: 25px;
+    Padding:25px;
+    Text-align: center;
+    Padding-top:20px;
+    }
+    

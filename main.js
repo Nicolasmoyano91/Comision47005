@@ -79,7 +79,7 @@ carrito.forEach((item) => {
         <p> ${item.precio} $</p>
         <p> ${item.cantidad}</p>
     `;
-    modalcontainer.append("carritoContent")
+    modalcontainer.append(carritoContent)
 
     let eliminar =document.createElement("span");
     eliminar.innerText="X";

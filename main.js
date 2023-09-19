@@ -1,3 +1,11 @@
+let products=[];
+fetch("./products.json")
+    .then(response => response.json())
+    .then(data => {
+    productos = data;
+    })
+
+
 const containeritems = document.getElementById(id = "containeritems");
 const iconcart = document.getElementById(id="iconcart");
 const modalcontainer= document.getElementById(id="modalcontainer");
@@ -48,6 +56,20 @@ agregar.addEventListener("click", () => {
             console.log(carrito);
             savelocal();
             }
+            Swal.fire({
+                title: 'Queres agregar el producto?',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Save',
+                denyButtonText: `Don't save`,
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                Swal.fire('Agregado!', '', 'success')
+                } else if (result.isDenied) {
+                Swal.fire('No Agredado', '', 'info')
+                }
+            })
         });
     });   
     const vercarrito =()=>{
@@ -85,7 +107,7 @@ carrito.forEach((item) => {
     eliminar.innerText="X";
     eliminar.className="Delete";
     carritoContent.append(eliminar);
-    });
+});
 
 const total = carrito.reduce((acc,el) => acc + el.precio,0);
 
@@ -100,6 +122,7 @@ iconcart.addEventListener("click",vercarrito );
 
 const eliminarProducto= ()=>{
 }
+
 
 const savelocal = ()=>{
 localStorage.setItem("carrito",JSON.stringify (carrito));

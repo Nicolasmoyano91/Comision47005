@@ -1,4 +1,3 @@
-/* Globales */
 *::after,
 *::before,
 *{
@@ -188,58 +187,58 @@ header{
 }
 
 .modal-container {
-    Widht: 80px;
-    Margin: 0 10%;
-    Max-height: 88vh;
-    Color: #fff;
-    Background-color: #121212;
-    Display:flex;
-    Flex-direction: column;
-    Align-items: center;
-    Position: fixed;
-    Overflow:auto;
-    z-index: 9;
-    top: 12vh;
-    scrollbar-color:none;
-    }
-    .modal-container::webkit-scrollbar{
-    display:none;
-    }
-    
-    .modalheader{
-    Display:flex;
-    Justify-content: space-around;
-    Background-color: #0a0909;
-    Color: #fff;
-    Widht:100 px;
-    }
-    .modal-header-title{
-    Justifiy-self: start;}
-    
-    .modal-header-button {
-    Cursor: pointer;
-    }
-    
-    
-    .modal-container > .modal-content {
-    Display:flex;
-    Flex-direction: row;
-    Justify-content: space-around;
-    Align-items: center;
-    Width: 70%;
-    Margin: 10px;
-    }
-    
-    
-    .modal-container > div > img {
-    Height: 120px;
-    Width:120px;
-    }
-    
-    .totalcomprado{
-    Font-size: 25px;
-    Padding:25px;
-    Text-align: center;
-    Padding-top:20px;
-    }
-    
+width: 300px;
+margin: 0 10%;
+max-height: 88vh;
+color: #fff;
+background-color: #121212;
+display:flex;
+flex-direction: column;
+align-items: center;
+position: fixed;
+Overflow:auto;
+z-index: 9;
+top: 12vh;
+scrollbar-color:none;
+}
+
+.modal-container::webkit-scrollbar{
+display:none;
+}
+
+.modalheader{
+display:flex;
+justify-content: space-around;
+background-color: #0a0909;
+color: #fff;
+width:100px;
+}
+
+.modal-header-title{
+justify-self: start;
+}
+
+.modal-header-button {
+cursor: pointer;
+}
+
+.modal-container > .modal-content {
+display:flex;
+flex-direction: row;
+justify-content:space-between;
+align-items: center;
+width:70%;
+margin: 10px;
+}
+
+.modal-container > div > img {
+height: 120px;
+width:120px;
+}
+
+.totalcomprado{
+font-size: 25px;
+padding:25px;
+text-align: center;
+padding: 120px;
+}

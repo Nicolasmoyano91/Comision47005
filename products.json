@@ -1,8 +1,44 @@
 [
-    { "id": 1, "nombre": "Chevrolet Onix", "precio": 5270000, "img":"./assets/onix.jpg","cantidad":1},
-    { "id": 2, "nombre": "Chevrolet Prisma", "precio": 5400000,"img":"./assets/prisma.jpg","cantidad":1},
-    { "id": 3, "nombre": "Chevrolet Cruze", "precio": 7690000,"img":"./assets/cruze.jpg", "cantidad":1},
-    { "id": 4, "nombre": "Ford Fiesta", "precio": 5770000,"img":"./assets/fiesta.jpg","cantidad":1},
-    { "id": 5, "nombre": "Ford Mondeo", "precio": 12350000,"img":"./assets/mondeo.jpg", "cantidad":1},
-    { "id": 6, "nombre": "Ford Ranger", "precio": 15530000, "img":"./assets/ranger.jpg", "cantidad":1}
+  {
+    "id": 1,
+    "nombre": "Chevrolet Onix",
+    "precio": 5270000,
+    "img": "./assets/onix.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Chevrolet Prisma",
+    "precio": 5400000,
+    "img": "./assets/prisma.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Chevrolet Cruze",
+    "precio": 7690000,
+    "img": "./assets/cruze.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Ford Fiesta",
+    "precio": 5770000,
+    "img": "./assets/fiesta.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Ford Mondeo",
+    "precio": 12350000,
+    "img": "./assets/mondeo.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 6,
+    "nombre": "Ford Ranger",
+    "precio": 15530000,
+    "img": "./assets/ranger.jpg",
+    "cantidad": 1
+  }
 ]
